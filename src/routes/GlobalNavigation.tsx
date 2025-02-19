@@ -1,13 +1,13 @@
-import { BrowserRouter, Navigate, NavLink, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import { routes } from './routes'
 import { Suspense } from 'react'
 
 export const Navigation = () => {
     return (
-        <div style={{ display: 'flex', flexDirection:'column' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
             <Suspense fallback={<h2>WAIT</h2>}>
                 <BrowserRouter>
-                    <nav style={{border: '1px solid red'}}>
+                    <nav style={{ border: '1px solid red' }}>
                         <ul>
                             {routes.map(route => {
                                 return <li>
