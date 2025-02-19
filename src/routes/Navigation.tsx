@@ -4,10 +4,10 @@ import { Suspense } from 'react'
 
 export const Navigation = () => {
     return (
-        <div className='main-layout'>
+        <div style={{ display: 'flex', flexDirection:'column' }}>
             <Suspense fallback={<h2>WAIT</h2>}>
                 <BrowserRouter>
-                    <nav>
+                    <nav style={{border: '1px solid red'}}>
                         <ul>
                             {routes.map(route => {
                                 return <li>
@@ -22,7 +22,6 @@ export const Navigation = () => {
                                 return <Route path={route.path} element={<route.Component />} />
                             })
                         }
-                        <Route path='/*' element={<Navigate to='/lazy1' replace />} />
                     </Routes>
                 </BrowserRouter>
             </Suspense>
